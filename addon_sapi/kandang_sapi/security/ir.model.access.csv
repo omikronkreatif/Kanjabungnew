@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_anggota,data_anggota,model_data_anggota,,1,1,1,1
+access_master_jenis_kunjungan,master_jenis_kunjungan,model_master_jenis_kunjungan,,1,1,1,1
+access_entry_gdfp,entry_gdfp,model_entry_gdfp,,1,1,1,1
+access_master_jenis_pakan_tambah,master_jenis_pakan_tambah,model_master_jenis_pakan_tambah,,1,1,1,1
+access_gdfp_sapi_line,gdfp_sapi_line,model_gdfp_sapi_line,,1,1,1,1

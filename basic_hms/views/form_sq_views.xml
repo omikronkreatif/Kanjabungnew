@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_sq_view" model="ir.ui.view">
+            <field name="name">form.sq.form.view</field>
+            <field name="model">form.sq</field>
+            <field name="arch" type="xml">
+                <form string="Form Sampel Quartir">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="eartag_id"/>
+                            <field name="tgl_layanan"/>
+                            <field name="cat_petugas"/>
+                            <field name="met_pengh_jss"/>
+                            <field name="knn_dpn_jss"/>
+                            <field name="knn_dpn_kuman"/>
+                            <field name="knn_blkg_jss"/>
+                            <field name="knn_blkg_kuman"/>
+                            <field name="kiri_dpn_jss"/>
+                            <field name="kanan_dpn_kuman"/>
+                            <field name="kiri_blkg_jss"/>
+                            <field name="kiri_blkg_kuman"/>
+                            <field name="biaya"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_sq_search_view" model="ir.ui.view">
+            <field name="name">form.sq.search.view</field>
+            <field name="model">form.sq</field>
+            <field name="arch" type="xml">
+                <search string="Search Sampel Quartir">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_sq_tree_view" model="ir.ui.view">
+            <field name="name">form.sq.tree.view</field>
+            <field name="model">form.sq</field>
+            <field name="arch" type="xml">
+                <tree string="Form Sampel Quartir">
+                    <field name="id_pemilik"/>
+                    <field name="eartag_id"/>
+                    <field name="tgl_layanan"/>
+                    <field name="cat_petugas"/>
+                    <field name="met_pengh_jss"/>
+                    <field name="knn_dpn_jss"/>
+                    <field name="knn_dpn_kuman"/>
+                    <field name="knn_blkg_jss"/>
+                    <field name="knn_blkg_kuman"/>
+                    <field name="kiri_dpn_jss"/>
+                    <field name="kanan_dpn_kuman"/>
+                    <field name="kiri_blkg_jss"/>
+                    <field name="kiri_blkg_kuman"/>
+                    <field name="biaya"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_sq" model="ir.actions.act_window">
+            <field name="name">Form Sampel Quartir</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.sq</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_sq" parent="menu_layanan"
+            action="action_form_sq" sequence="180" />
+
+</odoo>

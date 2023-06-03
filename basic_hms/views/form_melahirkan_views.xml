@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_melahirkan_view" model="ir.ui.view">
+            <field name="name">form.melahirkan.form.view</field>
+            <field name="model">form.melahirkan</field>
+            <field name="arch" type="xml">
+                <form string="Form Melahirkan">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="tgl_layanan"/>
+                            <field name="id_sapi_induk"/>
+                            <field name="eartag_id"/>
+                            <field name="id_sapi_jantan"/>
+                            <field name="tgl_lahir"/>
+                            <field name="jns_klmn"/>
+                            <field name="pengobatan"/>
+                            <field name="cat_petugas"/>
+                            <field name="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_melahirkan_search_view" model="ir.ui.view">
+            <field name="name">form.melahirkan.search.view</field>
+            <field name="model">form.melahirkan</field>
+            <field name="arch" type="xml">
+                <search string="Search Melahirkan">
+                    <separator orientation="vertical" />
+                    <field name="id_pemilik" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Pemilik" name='by_id_pemilik' context="{'group_by':'id_pemilik'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_melahirkan_tree_view" model="ir.ui.view">
+            <field name="name">form.melahirkan.tree.view</field>
+            <field name="model">form.melahirkan</field>
+            <field name="arch" type="xml">
+                <tree string="Form Melahirkan">
+                    <field name="id_pemilik"/>
+                    <field name="tgl_layanan"/>
+                    <field name="id_sapi_induk"/>
+                    <field name="eartag_id"/>
+                    <field name="id_sapi_jantan"/>
+                    <field name="tgl_lahir"/>
+                    <field name="jns_klmn"/>
+                    <field name="pengobatan"/>
+                    <field name="cat_petugas"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_melahirkan" model="ir.actions.act_window">
+            <field name="name">Form Melahirkan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.melahirkan</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_melahirkan" parent="menu_layanan"
+            action="action_form_melahirkan" sequence="140" />
+
+</odoo>

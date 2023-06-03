@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_liter_sapi,liter_sapi,model_liter_sapi,,1,1,1,1
+access_data_anggota_liter,data_anggota_liter,model_data_anggota_liter,,1,1,1,1
+access_tps_liter,tps_liter,model_tps_liter,,1,1,1,1
+access_setoran_line,setoran_line,model_setoran_line,,1,1,1,1

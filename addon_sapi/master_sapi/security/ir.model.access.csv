@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sapi,sapi,model_sapi,,1,1,1,1
+access_jenis_sapi_master,jenis_sapi_master,model_jenis_sapi_master,,1,1,1,1
+access_master_jenis_specimen,master_jenis_specimen,model_master_jenis_specimen,,1,1,1,1

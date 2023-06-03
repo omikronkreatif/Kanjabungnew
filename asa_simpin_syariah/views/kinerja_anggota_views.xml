@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_kinerja_anggota_tree" model="ir.ui.view">
+            <field name="name">kinerja.anggota.tree</field>
+            <field name="model">kinerja.anggota</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="kinerja anggota">
+                    <field name="anggota_id"/>
+                    <field name="id_anggota"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kinerja_anggota_form" model="ir.ui.view">
+            <field name="name">kinerja.anggota.form</field>
+            <field name="model">kinerja.anggota</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="kinerja anggota">
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="anggota_id"/>
+                            <field name="id_anggota"/>
+                        </group>
+                        <notebook>
+                            <page string="KOMPETENSI">
+                                <notebook>
+                                    <page string="Bidang Organisasi">
+                                            <group >
+                                                <group string="Bidang Organisasi A">
+                                                    <field name="org_dsr"/>
+                                                    <field name="bdy_org"/>
+                                                    <field name="jti_diri"/>
+                                                    <field name="hak_kwjbn"/>
+                                                </group>
+                                                <group string="Bidang Organisasi KA">
+                                                    <field name="din_kel"/>
+                                                    <field name="kmnksi"/>
+                                                    <field name="mod_sos"/>
+                                                    <field name="motivasi"/>
+                                                </group>
+                                                <group string="Bidang Organisasi KO">
+                                                    <field name="kepem"/>
+                                                    <field name="dsr_org"/>
+                                                    <field name="mngmn"/>
+                                                    <field name="anal_lapkeu"/>
+                                                    <field name="komit"/>
+                                                    <field name="sis_org"/>
+                                                </group>
+                                            </group>
+                                                <group string="Nilai Kompetensi Bidang Teknis Organisasi">
+                                                        <field name="nilai_kompetensi"/>
+                                                </group>
+                                                <group string="Total Kompetensi">
+                                                        <field name="total_kompetensi"/>
+                                                </group>
+                                        </page>
+                                    <page string="Bidang Teknis GDFP">
+
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page string="PENGEMBANGAN SDMA">
+                                <group >
+                                    <field name="pelatihan"/>
+                                    <field name="studi_banding"/>
+                                    <field name="peny_rutin"/>
+                                    <field name="peny_segmen"/>
+                                    <field name="peng_sdm"/>
+                                    <field name="pend_teknis"/>
+                                </group>
+                                <group string="Total Pengembangan SDMA">
+                                    <field name="total_peng_sdma"/>
+                                </group>
+                            </page>
+                            <page string="PENDIDIKAN">
+                                <group >
+                                    <field name="kriteria"/>
+                                    <field name="nilai_kriteria"/>
+                                </group>
+                                <group string="Total SDM">
+                                    <field name="nilai_kriteria"/>
+                                </group>
+                            </page>
+                            <page string="KEHADIRAN">
+                                <group >
+                                    <field name="kriteria"/>
+                                    <field name="nilai_kriteria"/>
+                                </group>
+                                <group string="Total SDM">
+                                    <field name="nilai_kriteria"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_kinerja_anggota_search" model="ir.ui.view">
+            <field name="name">kinerja.anggota.search</field>
+            <field name="model">kinerja.anggota</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="kinerja anggota">
+                    <field name="anggota_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Anggota" name="group_by_anggota_id_group_name"
+                                domain="[]" context="{'group_by':'anggota_id'}"/>
+<!--                        <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_kinerja_anggota_view">
+            <field name="name">Kinerja Anggota</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">kinerja.anggota</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_kinerja_anggota_search"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_kinerja_anggota_view_form">
+            <field name="act_window_id" ref="act_kinerja_anggota_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_kinerja_anggota_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_kinerja_anggota_view_tree">
+            <field name="act_window_id" ref="act_kinerja_anggota_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_kinerja_anggota_tree"/>
+        </record>
+
+        <menuitem id="menu_kinerja_anggota_details"
+                    name="Kinerja Anggota"
+                    parent="simpin_syariah_menu"
+                    sequence="2"
+                    action="act_kinerja_anggota_view"/>
+    </data>
+</odoo>

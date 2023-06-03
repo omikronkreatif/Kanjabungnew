@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="res_partner_inherit_form_user_view" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form.user.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="is_sapi" position="after">
+                    <field name="nama_user" />
+                    <field name="kata_kunci" />
+                </field>
+            </field>
+        </record>
+
+    <record id="account_asset_inherit_form_user_view" model="ir.ui.view">
+            <field name="name">account.asset.inherit.form.user.view</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="base_accounting_kit.view_account_asset_asset_form" />
+            <field name="arch" type="xml">
+                <field name="date" position="after">
+                    <field name="analytic_id" />
+                </field>
+            </field>
+        </record>
+</odoo>

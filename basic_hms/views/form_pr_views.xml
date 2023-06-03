@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_pr_view" model="ir.ui.view">
+            <field name="name">form.pr.form.view</field>
+            <field name="model">form.pr</field>
+            <field name="arch" type="xml">
+                <form string="Form Palpasi Rektal">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="eartag_id"/>
+                            <field name="tgl_layanan"/>
+                            <field name="cat_petugas"/>
+                            <field name="alsn_pal_rek"/>
+                            <field name="uterus"/>
+                            <field name="ovarikiri"/>
+                            <field name="ovarikanan"/>
+                            <field name="cervix"/>
+                            <field name="perk_siklus"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_pr_search_view" model="ir.ui.view">
+            <field name="name">form.pr.search.view</field>
+            <field name="model">form.pr</field>
+            <field name="arch" type="xml">
+                <search string="Search Palpasi Rektal">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_pr_tree_view" model="ir.ui.view">
+            <field name="name">form.pr.tree.view</field>
+            <field name="model">form.pr</field>
+            <field name="arch" type="xml">
+                <tree string="Form Palpasi Rektal">
+                    <field name="id_pemilik"/>
+                    <field name="eartag_id"/>
+                    <field name="tgl_layanan"/>
+                    <field name="cat_petugas"/>
+                    <field name="alsn_pal_rek"/>
+                    <field name="uterus"/>
+                    <field name="ovarikiri"/>
+                    <field name="ovarikanan"/>
+                    <field name="cervix"/>
+                    <field name="perk_siklus"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_pr" model="ir.actions.act_window">
+            <field name="name">Form Palpasi Rektal</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.pr</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_pr" parent="menu_layanan"
+            action="action_form_pr" sequence="160" />
+
+</odoo>

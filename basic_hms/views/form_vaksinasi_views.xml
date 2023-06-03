@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_vaksinasi_view" model="ir.ui.view">
+            <field name="name">form.vaksinasi.form.view</field>
+            <field name="model">form.vaksinasi</field>
+            <field name="arch" type="xml">
+                <form string="Form Vaksinasi">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="eartag_id"/>
+                            <field name="tgl_layanan"/>
+                            <field name="jns_vaksin"/>
+                            <field name="dosis"/>
+                            <field name="nama_vaksin"/>
+                            <field name="cat_petugas"/>
+                            <field name="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_vaksinasi_search_view" model="ir.ui.view">
+            <field name="name">form.vaksinasi.search.view</field>
+            <field name="model">form.vaksinasi</field>
+            <field name="arch" type="xml">
+                <search string="Search Vaksinasi">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_vaksinasi_tree_view" model="ir.ui.view">
+            <field name="name">form.vaksinasi.tree.view</field>
+            <field name="model">form.vaksinasi</field>
+            <field name="arch" type="xml">
+                <tree string="Form Vaksinasi">
+                    <field name="id_pemilik"/>
+                    <field name="eartag_id"/>
+                    <field name="tgl_layanan"/>
+                    <field name="jns_vaksin"/>
+                    <field name="dosis"/>
+                    <field name="nama_vaksin"/>
+                    <field name="cat_petugas"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_vaksinasi" model="ir.actions.act_window">
+            <field name="name">Form Vaksinasi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.vaksinasi</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_vaksinasi" parent="menu_layanan"
+            action="action_form_vaksinasi" sequence="220" />
+
+</odoo>

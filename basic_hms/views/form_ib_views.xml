@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_ib_view" model="ir.ui.view">
+            <field name="name">form.ib.form.view</field>
+            <field name="model">form.ib</field>
+            <field name="arch" type="xml">
+                <form string="Form IB">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="peternak_id"/>
+                                <field name="id_pemilik"/>
+                                <field name="kelompok_id"/>
+                                <field name="petugas_id"/>
+                            </group>
+                            <group>
+                                <field name="sapi_id"/>
+                                <field name="eartag_id"/>
+                                <field name="tgl_layanan"/>
+                                <field name="bcs"/>
+                                <field name="stts_reprod"/>
+                                <field name="nama_pejantan"/>
+                                <field name="no_batch"/>
+                                <field name="lama_birahi"/>
+                                <field name="ib_ke"/>
+                                <field name="pengamat_birahi"/>
+                                <field name="dose"/>
+                                <field name="cat_petugas"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_ib_search_view" model="ir.ui.view">
+            <field name="name">form.ib.search.view</field>
+            <field name="model">form.ib</field>
+            <field name="arch" type="xml">
+                <search string="Search IB">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_ib_tree_view" model="ir.ui.view">
+            <field name="name">form.ib.tree.view</field>
+            <field name="model">form.ib</field>
+            <field name="arch" type="xml">
+                <tree string="Form IB">
+                   <field name="peternak_id"/>
+                    <field name="sapi_id"/>
+                    <field name="stts_reprod"/>
+                    <field name="tgl_layanan"/>
+                    <field name="id_pejantan"/>
+                    <field name="no_batch"/>
+                    <field name="dose"/>
+                    <field name="ib_ke"/>
+                    <field name="cat_petugas"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_ib" model="ir.actions.act_window">
+            <field name="name">Form IB</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.ib</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_ib" parent="menu_layanan"
+            action="action_form_ib" sequence="100" />
+
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_pot_kuku_view" model="ir.ui.view">
+            <field name="name">form.pot.kuku.view</field>
+            <field name="model">form.pot.kuku</field>
+            <field name="arch" type="xml">
+                <form string="Form Potong Kuku">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="eartag_id"/>
+                            <field name="tgl_layanan"/>
+                            <field name="alsn_ptg_kku"/>
+                            <field name="dpn_kiri"/>
+                            <field name="dpn_kanan"/>
+                            <field name="blkg_kiri"/>
+                            <field name="blkg_kanan"/>
+                            <field name="pngbtn_lain_1"/>
+                            <field name="pngbtn_lain_2"/>
+                            <field name="cat_petugas"/>
+                            <field name="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_pot_kuku_search_view" model="ir.ui.view">
+            <field name="name">form.pot.kuku.search.view</field>
+            <field name="model">form.pot.kuku</field>
+            <field name="arch" type="xml">
+                <search string="Search Potong Kuku">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_pot_kuku_tree_view" model="ir.ui.view">
+            <field name="name">form.pot.kuku.tree.view</field>
+            <field name="model">form.pot.kuku</field>
+            <field name="arch" type="xml">
+                <tree string="Form Susu">
+                    <field name="id_pemilik"/>
+                    <field name="eartag_id"/>
+                    <field name="tgl_layanan"/>
+                    <field name="alsn_ptg_kku"/>
+                    <field name="dpn_kiri"/>
+                    <field name="dpn_kanan"/>
+                    <field name="blkg_kiri"/>
+                    <field name="blkg_kanan"/>
+                    <field name="pngbtn_lain_1"/>
+                    <field name="pngbtn_lain_2"/>
+                    <field name="cat_petugas"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_pot_kuku" model="ir.actions.act_window">
+            <field name="name">Form Potong Kuku</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.pot.kuku</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_pot_kuku" parent="menu_layanan"
+            action="action_form_pot_kuku" sequence="240" />
+
+</odoo>

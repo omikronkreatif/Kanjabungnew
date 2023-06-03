@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_pkb_view" model="ir.ui.view">
+            <field name="name">form.pkb.form.view</field>
+            <field name="model">form.pkb</field>
+            <field name="arch" type="xml">
+                <form string="Form PKB">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="peternak_id"/>
+                                <field name="id_pemilik"/>
+                                <field name="kelompok_id"/>
+                                <field name="petugas_id"/>
+                            </group>
+                            <group>
+                                <field name="sapi_id"/>
+                                <field name="eartag_id"/>
+                                <field name="tgl_layanan"/>
+                                <field name="bcs"/>
+                                <field name="tanda_bunting"/>
+                                <field name="posisi"/>
+                                <field name="tgl_ib_akhir"/>
+                                <field name="umur_bunting"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_pkb_search_view" model="ir.ui.view">
+            <field name="name">form.pkb.search.view</field>
+            <field name="model">form.pkb</field>
+            <field name="arch" type="xml">
+                <search string="Search PKB">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_pkb_tree_view" model="ir.ui.view">
+            <field name="name">form.pkb.tree.view</field>
+            <field name="model">form.pkb</field>
+            <field name="arch" type="xml">
+                <tree string="Form pkb">
+                    <field name="peternak_id"/>
+                    <field name="id_pemilik"/>
+                    <field name="kelompok_id"/>
+                    <field name="petugas_id"/>
+                    <field name="sapi_id"/>
+                    <field name="eartag_id"/>
+                    <field name="tgl_layanan"/>
+                    <field name="bcs"/>
+                    <field name="tanda_bunting"/>
+                    <field name="posisi"/>
+                    <field name="tgl_ib_akhir"/>
+                    <field name="umur_bunting"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_pkb" model="ir.actions.act_window">
+            <field name="name">Form PKB</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.pkb</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_pkb" parent="menu_layanan"
+            action="action_form_pkb" sequence="20" />
+
+</odoo>

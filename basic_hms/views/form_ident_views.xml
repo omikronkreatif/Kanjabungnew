@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="form_ident_view" model="ir.ui.view">
+            <field name="name">form.ident.view</field>
+            <field name="model">form.ident</field>
+            <field name="arch" type="xml">
+                <form string="Form Identifikasi">
+                    <sheet>
+                        <group>
+                            <field name="id_pemilik"/>
+                            <field name="eartag_id"/>
+                            <field name="metode_perolehan"/>
+                            <field name="tipe"/>
+                            <field name="stts_reprod"/>
+                            <field name="laktasi"/>
+                            <field name="lak_ke"/>
+                            <field name="id_induk"/>
+                            <field name="id_ayah"/>
+                            <field name="tgl_lahir"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="form_ident_search_view" model="ir.ui.view">
+            <field name="name">form.ident.search.view</field>
+            <field name="model">form.ident</field>
+            <field name="arch" type="xml">
+                <search string="Search Identifikasi">
+                    <separator orientation="vertical" />
+                    <field name="eartag_id" select="1" />
+                    <newline />
+                    <group expand="1" string="Group By">
+                        <filter string="ID Sapi" name='by_eartag_id' context="{'group_by':'eartag_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_ident_tree_view" model="ir.ui.view">
+            <field name="name">form.ident.tree.view</field>
+            <field name="model">form.ident</field>
+            <field name="arch" type="xml">
+                <tree string="Form Susu">
+                    <field name="id_pemilik"/>
+                    <field name="eartag_id"/>
+                    <field name="metode_perolehan"/>
+                    <field name="tipe"/>
+                    <field name="stts_reprod"/>
+                    <field name="laktasi"/>
+                    <field name="lak_ke"/>
+                    <field name="id_induk"/>
+                    <field name="id_ayah"/>
+                    <field name="tgl_lahir"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_form_ident" model="ir.actions.act_window">
+            <field name="name">Form Identifikasi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">form.ident</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_form_ident" parent="menu_layanan"
+            action="action_form_ident" sequence="250" />
+
+</odoo>

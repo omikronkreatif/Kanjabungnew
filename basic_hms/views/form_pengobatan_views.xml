@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--        <record id="form_pengobatan_view" model="ir.ui.view">-->
+<!--            <field name="name">form.pengobatan.form.view</field>-->
+<!--            <field name="model">form.pengobatan</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Form Pengobatan">-->
+<!--                    <sheet>-->
+<!--                        <group>-->
+<!--                            <field name="id_pemilik"/>-->
+<!--                            <field name="id_sapi"/>-->
+<!--                            <field name="tgl_layanan"/>-->
+<!--                            <field name="kasus_penyakit"/>-->
+<!--                            <field name="obat"/>-->
+<!--                            <field name="dosis"/>-->
+<!--                            <field name="metode_pengobatan"/>-->
+<!--                            <field name="status_kes"/>-->
+<!--                            <field name="image"/>-->
+<!--                            <field name="catatan"/>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="form_pengobatan_search_view" model="ir.ui.view">-->
+<!--            <field name="name">form.pengobatan.search.view</field>-->
+<!--            <field name="model">form.pengobatan</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Search Pengobatan">-->
+<!--                    <separator orientation="vertical" />-->
+<!--                    <field name="id_sapi" select="1" />-->
+<!--                    <newline />-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="ID Sapi" name='by_id_sapi' context="{'group_by':'id_sapi'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="form_pengobatan_tree_view" model="ir.ui.view">-->
+<!--            <field name="name">form.pengobatan.tree.view</field>-->
+<!--            <field name="model">form.pengobatan</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Form Pengobatan">-->
+<!--                    <field name="id_pemilik"/>-->
+<!--                    <field name="id_sapi"/>-->
+<!--                    <field name="tgl_layanan"/>-->
+<!--                    <field name="kasus_penyakit"/>-->
+<!--                    <field name="obat"/>-->
+<!--                    <field name="dosis"/>-->
+<!--                    <field name="metode_pengobatan"/>-->
+<!--                    <field name="status_kes"/>-->
+<!--                    <field name="catatan"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="action_form_pengobatan" model="ir.actions.act_window">-->
+<!--            <field name="name">Form Pengobatan</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">form.pengobatan</field>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--        </record>-->
+
+<!--        <menuitem id="menu_form_pengobatan" parent="menu_layanan"-->
+<!--            action="action_form_pengobatan" sequence="50" />-->
+
+</odoo>
